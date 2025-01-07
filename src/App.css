@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --theme-blue: #091d35;
+  --theme-red: #ea483e;
+}
+
+.homepage {
+  background-image: url("./assets/chacona2.webp");
+  background-position: center;
+  background-size: cover;
+  font-family: "Lato", serif;
+}
+.cover {
+  background-color: #0000006b;
+  height: 100%;
+}
+.logo {
+  font-family: "Rubik Vinyl", serif;
+}
+.navbar_left > a {
+  font-family: "Oswald", serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.homepage h1 {
+  font-family: "Oswald", serif;
+}
+.navbar a:hover {
+  color: var(--theme-red);
+  transition: 0.3s ease-in;
+}
+.navbar .logo_name:hover {
+  color: white;
+}
+.exploreBt {
+  font-family: "Oswald", serif;
+}
