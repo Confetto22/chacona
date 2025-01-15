@@ -18,7 +18,7 @@ const navLinks = [
   },
   {
     ref: "Services",
-    refLink: "/",
+    refLink: "/services",
     category: "navPage",
   },
   {

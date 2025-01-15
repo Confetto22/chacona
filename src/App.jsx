@@ -5,6 +5,7 @@ import { useLayoutEffect } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
+import Services from "./pages/Services";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -20,6 +21,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </Wrapper>
   );
