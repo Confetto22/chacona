@@ -24,8 +24,8 @@ const navLinks = [
     category: "navPage",
   },
   {
-    ref: "Rooms",
-    refLink: "/",
+    ref: "Listings",
+    refLink: "/listings",
     category: "navPage",
   },
   {

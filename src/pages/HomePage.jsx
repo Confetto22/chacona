@@ -8,7 +8,7 @@ const HomePage = () => {
           Your Perfect Space For <br />{" "}
           <span className="underline">every occasion</span>
         </h1>
-        <button className="exploreBt text-stone-100 bg-[#EB2C29] px-12 py-3 rounded-sm capitalize text-[1.1rem] tracking-wider hover:text-[#EB2C29] hover:bg-white ease-in duration-300">
+        <button className="exploreBt text-stone-100 bg-[var(--theme-red)] px-12 py-3 rounded-sm capitalize text-[1.1rem] tracking-wider hover:text-[var(--theme-red)] hover:bg-white ease-in duration-300">
           explore
         </button>
       </div>

@@ -49,8 +49,13 @@ const Services = () => {
   const [hovered, setHovered] = useState("");
   return (
     <section className="">
-      <SecHeading currPage={"Services"} />
-      <div className="allServices grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-8 gap-6  ">
+      <SecHeading
+        currPage={"Services"}
+        bgPic={
+          "bg-[url('https://res.cloudinary.com/dv9aqxptd/image/upload/v1737551381/chacona/modern-urban-buildings-view_vkt1dx.jpg')]"
+        }
+      />
+      <div className="allServices grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-8 gap-6">
         {allServices.map((service) => (
           <div
             key={service.name}

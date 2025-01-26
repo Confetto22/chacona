@@ -3,9 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Montserrat", serif;
+}
 :root {
   --theme-blue: #091d35;
-  --theme-red: #ea483e;
+  --theme-red: #ff6041;
+  --soft-shadow: 3.346px 3.716px 22.5px #00000012;
 }
 
 .homepage {
@@ -42,7 +46,7 @@
   font-family: "Oswald", serif;
 }
 .secheading {
-  background-image: url("./assets/chacona1.jpg");
+  /* background-image: url("./assets/chacona1.jpg"); */
   background-position: center;
   background-size: cover;
 }
@@ -50,4 +54,25 @@
   box-shadow: 0px 0px 4px 0px rgb(216, 216, 216);
   /* transform: rotateY(30deg);
   transition: 1s ease-in-out; */
+}
+.listing_heading p {
+  font-family: "Oswald", serif;
+}
+.property {
+  font-family: "Lato", serif;
+  box-shadow: 0px 0px 7px 0px var(--soft-shadow);
+}
+.roomDets p,
+.more_detail_head div p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  text-transform: capitalize;
+}
+
+.side_info,
+.more_dets_area,
+.more_detail_head {
+  box-shadow: var(--soft-shadow);
 }

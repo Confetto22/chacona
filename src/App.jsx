@@ -6,6 +6,8 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Services from "./pages/Services";
+import Listings from "./pages/Listings";
+import PropertyDetail from "./components/common/PropertyDetail";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -22,6 +24,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/listings" element={<Listings />} />
+        <Route path="/listings/:name" element={<PropertyDetail />} />
       </Routes>
     </Wrapper>
   );
