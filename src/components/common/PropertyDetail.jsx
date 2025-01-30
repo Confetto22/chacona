@@ -19,6 +19,9 @@ import { SiAdguard } from "react-icons/si";
 import { TbDoorExit } from "react-icons/tb";
 import { PiBathtubLight } from "react-icons/pi";
 import { TbAirConditioning } from "react-icons/tb";
+import { LiaTelegram } from "react-icons/lia";
+import { FaWhatsapp } from "react-icons/fa";
+
 // import { FaInstagram } from "react-icons/fa";
 // import { FaWhatsapp } from "react-icons/fa";
 // import { FaFacebookF } from "react-icons/fa";
@@ -156,7 +159,7 @@ const PropertyDetail = () => {
           </div>
         </div>
         <section className="flex flex-col md:flex-row md:items-start md:gap-8 gap-14">
-          <section className="more_dets_area md:max-w-[70%] rounded-lg py-8 px-10 flex flex-col items-start gap-14">
+          <section className="more_dets_area md:max-w-[70%] rounded-lg md:py-8 md:px-10 p-4 flex flex-col items-start gap-14">
             <div className="flex flex-col items-start gap-6">
               <div className="property_img rounded-md w-full">
                 <img
@@ -213,11 +216,57 @@ const PropertyDetail = () => {
               chacona luxury properties
             </p>
           </section>
-          <div className="side_info min-h-[60vh] max-h-[80vh]  w-full rounded-md md:sticky md:top-0 p-5">
+          <div className="side_info min-h-[60vh] max-h-[80vh] flex flex-col gap-4  w-full rounded-md md:sticky md:top-0 p-5">
             {/* <h2 className="md:text-[1.4rem] font-semibold capitalize">
               contact
             </h2>
             <p> Reach us through the links below</p> */}
+            <h2 className="text-[1.2rem] md:text-[1.4rem] font-semibold text-stone-700">
+              Message To Book
+            </h2>
+            <form
+              className=" contact_form grid grid-cols-1 gap-3"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input
+                type="text"
+                className="border "
+                placeholder="Name *"
+                required
+              />
+              <input type="email" className="border " placeholder="Email" />
+              <input
+                type="tel"
+                className="border "
+                placeholder="Phone No. *"
+                required
+                minLength={"10"}
+                maxLength={"10"}
+              />
+              <textarea
+                name="description"
+                placeholder="Message *"
+                required
+                className="border "
+              ></textarea>
+              <button className="text-[.9rem] md:text-[1rem] rounded-md py-2 w-full duration-200 ease-in capitalize hover:bg-[#fdfff5] flex items-center gap-1 justify-center hover:gap-3">
+                <span>
+                  <LiaTelegram />
+                </span>{" "}
+                book now
+              </button>
+            </form>
+            <Link
+              to={"https://wa.me/message/V2KUXF7PS74CP1"}
+              className="whastapp_btn bg-[#17980E] text-white hover:bg-white hover:text-[#17980e] flex items-center justify-center gap-1 hover:gap-3 py-2 rounded-md ease-in duration-300 w-full"
+              target="_blank"
+            >
+              {" "}
+              <span>
+                <FaWhatsapp />
+              </span>{" "}
+              WhatsApp Us!
+            </Link>
           </div>
         </section>
       </section>

@@ -76,3 +76,22 @@ body {
 .more_detail_head {
   box-shadow: var(--soft-shadow);
 }
+.contact_form input,
+.contact_form textarea {
+  padding: 0.6rem 0.4rem;
+  border-radius: 0.3rem;
+  box-shadow: var(--soft-shadow);
+  border: none;
+  font-size: 0.8rem;
+}
+.contact_form button,
+.whastapp_btn {
+  box-shadow: var(--soft-shadow);
+}
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+  /* color: #f17474e7; */
+}
+.contact_form textarea {
+  min-height: 7rem;
+}
