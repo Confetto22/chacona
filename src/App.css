@@ -95,3 +95,15 @@ body {
 .contact_form textarea {
   min-height: 7rem;
 }
+
+.swiper {
+  width: 100%;
+  /* background-color: #091d35; */
+  max-height: 400px;
+}
+
+@media only screen and (min-width: 768px) {
+  .swiper {
+    max-height: 600px;
+  }
+}

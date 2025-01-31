@@ -8,19 +8,24 @@ import { Link } from "react-router-dom";
 import { LuSofa } from "react-icons/lu";
 import { SlLocationPin } from "react-icons/sl";
 // import { IoMdCheckboxOutline } from "react-icons/io";
-import { IoWifiOutline } from "react-icons/io5";
-import { TbToolsKitchen2 } from "react-icons/tb";
-import { AiOutlineCar } from "react-icons/ai";
-import { MdOutlinePool } from "react-icons/md";
-import { LuCctv } from "react-icons/lu";
-import { FaPowerOff } from "react-icons/fa6";
-import { MdOutlineLocalLaundryService } from "react-icons/md";
-import { SiAdguard } from "react-icons/si";
-import { TbDoorExit } from "react-icons/tb";
-import { PiBathtubLight } from "react-icons/pi";
-import { TbAirConditioning } from "react-icons/tb";
+// import { IoWifiOutline } from "react-icons/io5";
+// import { TbToolsKitchen2 } from "react-icons/tb";
+// import { AiOutlineCar } from "react-icons/ai";
+// import { MdOutlinePool } from "react-icons/md";
+// import { LuCctv } from "react-icons/lu";
+// import { FaPowerOff } from "react-icons/fa6";
+// import { MdOutlineLocalLaundryService } from "react-icons/md";
+// import { SiAdguard } from "react-icons/si";
+// import { TbDoorExit } from "react-icons/tb";
+// import { PiBathtubLight } from "react-icons/pi";
+// import { TbAirConditioning } from "react-icons/tb";
 import { LiaTelegram } from "react-icons/lia";
 import { FaWhatsapp } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay } from "swiper/modules";
 
 // import { FaInstagram } from "react-icons/fa";
 // import { FaWhatsapp } from "react-icons/fa";
@@ -50,52 +55,52 @@ import { FaWhatsapp } from "react-icons/fa";
 //   },
 // ];
 
-export const features = [
-  {
-    name: "Free Wi-Fi",
-    icon: <IoWifiOutline />,
-  },
-  {
-    name: "Kitchen",
-    icon: <TbToolsKitchen2 />,
-  },
-  {
-    name: "Free Parking Space",
-    icon: <AiOutlineCar />,
-  },
-  {
-    name: "Pool",
-    icon: <MdOutlinePool />,
-  },
-  {
-    name: "Security Cameras",
-    icon: <LuCctv />,
-  },
-  {
-    name: "Power Backup",
-    icon: <FaPowerOff />,
-  },
-  {
-    name: "Laundry Service",
-    icon: <MdOutlineLocalLaundryService />,
-  },
-  {
-    name: "Security Guard",
-    icon: <SiAdguard />,
-  },
-  {
-    name: "Emergency Exit",
-    icon: <TbDoorExit />,
-  },
-  {
-    name: "Jacuzzi",
-    icon: <PiBathtubLight />,
-  },
-  {
-    name: "Air Conditioning",
-    icon: <TbAirConditioning />,
-  },
-];
+// export const features = [
+//   {
+//     name: "Free Wi-Fi",
+//     icon: "fa-solid fa-wifi",
+//   },
+//   {
+//     name: "Kitchen",
+//     icon: "fa-solid fa-utensils",
+//   },
+//   {
+//     name: "Free Parking Space",
+//     icon: "bx bx-car",
+//   },
+//   {
+//     name: "Pool",
+//     icon: "fa-solid fa-person-swimming",
+//   },
+//   {
+//     name: "Security Cameras",
+//     icon: "bx bx-cctv",
+//   },
+//   {
+//     name: "Power Backup",
+//     icon: "bx bx-power-off",
+//   },
+//   {
+//     name: "Laundry Service",
+//     icon: "fa-solid fa-jug-detergent",
+//   },
+//   {
+//     name: "Security Guard",
+//     icon: "bx bx-check-shield",
+//   },
+//   {
+//     name: "Emergency Exit",
+//     icon: "bx bx-exit",
+//   },
+//   {
+//     name: "Jacuzzi",
+//     icon: "bx bx-bath",
+//   },
+//   {
+//     name: "Air Conditioning",
+//     icon: "fa-solid fa-temperature-arrow-down",
+//   },
+// ];
 
 const PropertyDetail = () => {
   const { name } = useParams();
@@ -103,7 +108,10 @@ const PropertyDetail = () => {
   const filterProperty = properties.filter(
     (newFilter) => newFilter.name === name
   );
-  console.log(filterProperty);
+  // const imgSlideshow = filterProperty[0].moreDets.detsImg.map(
+  //   (singleImg) => singleImg
+  // );
+  // console.log(filterProperty);
   // console.log(filterProperty[0].);
   const iconStyle = "text-[1.2rem] font-semibold";
 
@@ -160,14 +168,34 @@ const PropertyDetail = () => {
         </div>
         <section className="flex flex-col md:flex-row md:items-start md:gap-8 gap-14">
           <section className="more_dets_area md:max-w-[70%] rounded-lg md:py-8 md:px-10 p-4 flex flex-col items-start gap-14">
-            <div className="flex flex-col items-start gap-6">
-              <div className="property_img rounded-md w-full">
-                <img
-                  src={filterProperty[0].moreDets.detsImg}
-                  alt={name}
-                  className="w-full rounded-md aspect-[4/3] max-h-[500px] object-cover"
-                />
-              </div>
+            <div className="flex flex-col items-start gap-6 w-full">
+              <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                // navigation={true}
+                loop={true}
+                modules={[Autoplay]}
+                className="mySwiper imagesContainer md:w-3/6 lg:w-[40%]"
+              >
+                {filterProperty[0].moreDets.detsImg.map((singleImg) => (
+                  <div
+                    className="property_img rounded-md w-full h-full"
+                    key={singleImg}
+                  >
+                    <SwiperSlide>
+                      <img
+                        src={singleImg}
+                        alt={name}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </SwiperSlide>
+                  </div>
+                ))}
+              </Swiper>
               <p className="font-semibold  md:text-[1.4rem] tracking-wide">
                 Property Brief
               </p>
@@ -175,7 +203,7 @@ const PropertyDetail = () => {
                 {filterProperty[0].moreDets.brief}
               </p>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 md:gap-4">
               <h2 className="md:text-[1.4rem] font-semibold">
                 Features & Amenities
               </h2>
@@ -186,7 +214,8 @@ const PropertyDetail = () => {
                     key={feature.name}
                   >
                     <span className="text-[1.5rem] text-[var(--theme-red)]">
-                      {feature.icon}
+                      {/* {feature.icon} */}
+                      <i className={feature.icon}></i>
                     </span>
                     {feature.name}
                   </p>
