@@ -214,7 +214,6 @@ const PropertyDetail = () => {
                     key={feature.name}
                   >
                     <span className="text-[1.5rem] text-[var(--theme-red)]">
-                      {/* {feature.icon} */}
                       <i className={feature.icon}></i>
                     </span>
                     {feature.name}

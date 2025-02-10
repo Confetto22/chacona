@@ -84,7 +84,6 @@ export const properties = [
     name: "Cozy 1 Bedroom Ensuite",
     image:
       "https://res.cloudinary.com/dv9aqxptd/image/upload/v1737551381/chacona/modern-urban-buildings-view_vkt1dx.jpg",
-    // price: "GHC200 / night",
     desc: "Real estate is divided into several categories, including residential property, commercial property and industrial property.",
     roomDets: {
       beds: "1",
